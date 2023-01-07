@@ -16,7 +16,5 @@ import { User } from './typeorm/entities/User';
     entities: [User],
     synchronize: true,
   }),],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule { }

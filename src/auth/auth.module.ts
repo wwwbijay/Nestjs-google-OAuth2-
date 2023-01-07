@@ -8,6 +8,12 @@ import { User } from 'src/typeorm/entities/User';
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
   controllers: [AuthController],
-  providers: [AuthService, GoogleStrategy]
+  providers: [
+    GoogleStrategy,
+    {
+      provide: 'AUTH_SERVICE',
+      useClass: AuthService
+    }
+  ]
 })
 export class AuthModule { }
